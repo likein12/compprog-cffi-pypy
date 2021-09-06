@@ -23,11 +23,10 @@ ffibuilder.cdef("""
 
     typedef struct {
         int length;
-        int* table;
-        int* n_members;
+        int* dsu;
     } Dsu;
 
-    Dsu *DsuInit(int length);
+    Dsu* dsu_init(int length);
     int dsu_find(Dsu *dsu, int x);
     void dsu_union(Dsu *dsu, int x, int y);
 
@@ -79,6 +78,7 @@ ffibuilder.cdef("""
     static void PrinterOne(int64_t x);
     static void PrinterArray(int64_t *x, int n);
     data_t (*get_operator(const char *str)) (data_t, data_t);
+
 """)
 
 # set_source() gives the name of the python extension module to
