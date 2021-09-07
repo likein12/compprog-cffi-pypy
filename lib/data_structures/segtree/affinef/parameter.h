@@ -1,8 +1,8 @@
-//TAG=affine
+//TAG=affinef
 
 typedef struct {
-    ll a;
-    ll b;
+    lf a;
+    lf b;
 } st_data_t_TAG;
 
 st_data_t_TAG st_op_TAG(st_data_t_TAG a, st_data_t_TAG b){

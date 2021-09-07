@@ -1,4 +1,4 @@
 typedef struct {
-    ll a;
-    ll b;
+    lf a;
+    lf b;
 } st_data_t_TAG;

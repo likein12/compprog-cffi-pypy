@@ -1,4 +1,4 @@
-//TAG=affine
+//TAG=affinem
 
 typedef struct {
     ll a;
@@ -6,7 +6,7 @@ typedef struct {
 } st_data_t_TAG;
 
 st_data_t_TAG st_op_TAG(st_data_t_TAG a, st_data_t_TAG b){
-    return {a.a*b.a, a.b*b.a+b.b};
+    return {a.a*b.a%MOD, (a.b*b.a+b.b)%MOD};
 }
 
 st_data_t_TAG st_ide_TAG(){
