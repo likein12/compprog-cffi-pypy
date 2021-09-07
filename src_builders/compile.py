@@ -78,7 +78,9 @@ ffibuilder.cdef("""
     static void PrinterOne(int64_t x);
     static void PrinterArray(int64_t *x, int n);
     data_t (*get_operator(const char *str)) (data_t, data_t);
-
+    
+    int dp_wrapper(int _i, int _j);
+    int count();
 """)
 
 # set_source() gives the name of the python extension module to
