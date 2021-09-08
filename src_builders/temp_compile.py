@@ -36,7 +36,35 @@ hq_data_t_lf hq_pop_lf(cheapq_lf *hq);
 hq_data_t_lf hq_top_lf(cheapq_lf *hq);
 void hq_push_lf(cheapq_lf *hq, hq_data_t_lf x);
 
-//EMBEDPOINT
+
+typedef ll cs_data_t_ll;
+
+typedef struct cs_node_ll{
+    cs_data_t_ll key;
+    struct cs_node_ll* left;
+    struct cs_node_ll* right;
+    int rank;
+    int size;
+    int isR;
+} cs_node_ll;
+
+typedef struct {
+    cs_node_ll* root;
+    int size;
+} coset_ll;
+
+coset_ll* coset_init_ll();
+int cs_get_size_ll(coset_ll* cs);
+cs_node_ll* cs_max_ll(coset_ll* cs);
+cs_node_ll* cs_min_ll(coset_ll* cs);
+cs_node_ll* cs_lower_bound_ll(coset_ll* cs, cs_data_t_ll k);
+cs_node_ll* cs_rlower_bound_ll(coset_ll* cs, cs_data_t_ll k);
+cs_node_ll* cs_upper_bound_ll(coset_ll* cs, cs_data_t_ll k);
+cs_node_ll* cs_rupper_bound_ll(coset_ll* cs, cs_data_t_ll k);
+cs_node_ll* cs_find_ll(coset_ll* cs, cs_data_t_ll k);
+void cs_insert_ll(coset_ll* cs, cs_data_t_ll k);
+//void cs_remove_ll(coset_ll* cs, cs_data_t_ll k);
+
 
 static ll scanner_ll();
 static ll* scanner_ll_multi(int n);

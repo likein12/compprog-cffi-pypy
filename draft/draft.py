@@ -1,33 +1,22 @@
 from _compprog_cffi import ffi, lib
-from collections import deque
  
-scanner_ll = lib.scanner_ll
-scanner_ll_multi = lib.scanner_ll_multi
-scanner_string = lib.scanner_string
-printer_ll_one = lib.printer_ll_one
-printer_ll_array_v = lib.printer_ll_array_v
-printer_ll_array_h = lib.printer_ll_array_h
-
-hq_init_ll = lib.hq_init_ll
-hq_get_size_ll = lib.hq_get_size_ll
-hq_pop_ll = lib.hq_pop_ll
-hq_top_ll = lib.hq_top_ll
-hq_push_ll = lib.hq_push_ll
+coset_init = lib.coset_init_ll
+insert =  lib.cs_insert_ll
+upper_bound = lib.cs_upper_bound_ll
+rupper_bound = lib.cs_rupper_bound_ll
  
-Q = scanner_ll()
+scan = lib.scanner_ll
+prin = lib.printer_ll_one
+L,Q = scan(), scan()
  
-hq = hq_init_ll()
-dq = deque()
+cs = coset_init()
  
+insert(cs, 0)
+insert(cs, L)
 for i in range(Q):
-    q = scanner_ll()
-    if q==1:
-        dq.append(scanner_ll())
-    elif q==2:
-        if hq_get_size_ll(hq)>0:
-            printer_ll_one(hq_pop_ll(hq))
-        else:
-            printer_ll_one(dq.popleft())
+    if scan()==1:
+        x = scan()
+        insert(cs, x)
     else:
-        while dq:
-            hq_push_ll(hq,dq.popleft())
+        x = scan()
+        prin(upper_bound(cs, x).key - rupper_bound(cs, x).key)

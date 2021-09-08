@@ -31,5 +31,4 @@ def create_header(lib, tag):
     open(compprog_path, "w").write(compprog_code)
 
 
-create_header("./lib/data_structures/cheapq", "ll")
-create_header("./lib/data_structures/cheapq", "lf")
+create_header("./lib/data_structures/coset", "ll")
